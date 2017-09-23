@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Update Direction</h1>
+
+<form action="{{ Direction.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update Direction</button></br>
+	<a href=" {{ post.get_absolute_url }} ">Cancel</a></br>
+</form>
+
+{% endblock %}

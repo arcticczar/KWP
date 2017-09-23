@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete Infrastructure</h1>
+
+<form action="{{ Infrastructure.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	{{ post.name }} </br>
+
+	<a href="{{ post.get_absolute_url }}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Infrastructure</button>
+</form>
+
+
+{% endblock %}

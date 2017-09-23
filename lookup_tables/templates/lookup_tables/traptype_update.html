@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Update TrapType</h1>
+
+<form action="{{ TrapType.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update TrapType</button>
+
+	<br><a href="{{ post.get_absolute_url }}">Cancel</a>
+</form>
+
+
+{% endblock %}

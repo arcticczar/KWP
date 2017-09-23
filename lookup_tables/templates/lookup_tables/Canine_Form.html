@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Create Canine </h1>
+<div>
+    <div>
+        <form
+            action = "{% url 'canine_create' %}"
+            method = "post">
+            {% csrf_token %}
+
+            {{ form.as_p }} 
+            
+             
+            <button type="submit">
+            submit</button>
+
+            <a href="{{ listview }}">Cancel</a>
+            
+        </form>
+       
+    </div>
+</div>
+
+{% endblock %}

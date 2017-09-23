@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Update Infrastructure</h1>
+
+<form action="{{ infrastructure.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update Infrastructure</button>
+
+	<br><a href="{{ post.get_absolute_url }}">Cancel</a>
+</form>
+
+{% endblock %}

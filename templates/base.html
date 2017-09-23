@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{{form.media}}
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.11.3/dojo/dojo.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+	<title>{% block title %} Base template {% endblock %}</title>
+	<style>
+		body {
+			    background-color: lightblue;
+			}
+
+
+	</style>	
+	</head>
+	<body>
+		{% block content %}
+		default content
+		{% endblock %}
+		<script>
+			var options = {
+			  enableHighAccuracy: true,
+			  timeout: 5000,
+			  maximumAge: 0
+			};
+
+			function success(pos) {
+			  var crd = pos.coords;
+
+			  console.log('Your current position is:');
+			  console.log(`Latitude : ${crd.latitude}`);
+			  console.log(`Longitude: ${crd.longitude}`);
+			  console.log(`More or less ${crd.accuracy} meters.`);
+			};
+
+			function error(err) {
+			  console.warn(`ERROR(${err.code}): ${err.message}`);
+			};
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+
+			require(["dijit/form/Button",
+								"dojo/dom",
+			          "dojo/domReady!"],
+			          
+			          function(Button, dom){
+			          var myButton = new Button({
+			          label: "Geolocate",
+			          onClick: function(){
+			          	dom.byId("location").innerHTML = "Location in console";
+			            navigator.geolocation.getCurrentPosition(success, error, options);
+			          }
+			          }, "progButtonNode").startup();
+			          });
+		</script>
+		<button id="progButtonNode" type="button">Geolocate</button>
+		<div id=location></div>
+	</body>
+	<footer>
+		<a href="{% url 'home' %}">Home</a>
+
+	</footer>
+</html>

@@ -1,0 +1,24 @@
+{% extends parent_template|default:"base.html" %}
+{% block title %}
+ {{ instance }}
+{% endblock %}
+{% block content %}
+<h2></h2>
+	<section>
+	{% if ziplist %}
+		<h3>{{ instance|upper }}</h3>
+		
+		<ul>
+
+		</ul>
+	</section>
+		<section>
+			{%  for obj in ziplist %}
+			<li>{{ obj.0 }} - {{ obj.1}}
+			{% endfor %}
+		</section>
+	<a href="{{ update }}">Edit</a></br></li> <a href="{{ delete }}">Delete</a></br></section>
+	{% else %}
+	 <p> No Data </p>
+	 {% endif %}
+	 {% endblock %}

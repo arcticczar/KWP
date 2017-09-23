@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete Direction</h1>
+
+<form action="{{ SpeciesDef.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	{{ post.direction_text }} </br>
+	{{ post.direction_short }}</br>
+	{{ post.deg }}</br>
+	<a href="{{ post.get_absolute_url}}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Direction</button>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends parent_template|default:"base.html" %}
+{% block title %}
+ Home Page
+{% endblock %}
+
+{% block content %}
+{% for app1,models in modellist.items %}
+	<h2><p>{{ app1 }}</a></p></h2>
+		{% for model in models %}
+		<ul>
+			<li><b><a href="{{ app1}}/{{ model }}">{{ model|title }}</b> 
+          </li></a>
+		</ul>
+		{% endfor %}
+	{% endfor %}
+
+{% endblock %}

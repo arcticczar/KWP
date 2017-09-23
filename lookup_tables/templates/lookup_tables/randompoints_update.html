@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Update Random Point</h1>
+
+<form action="{{ randompoints.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update Random Point</button>
+
+	<br><a href="{{ post.get_absolute_url }}">Cancel</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<H1>Lookup Landing</H1>
+
+{% for item in modelnames %}
+	<p>{{ item }} <a href="{{item}}">List View</a> <a href="{{item}}/create/">Create</a> </p>
+{% endfor %}
+{% endblock %}

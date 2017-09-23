@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Update Species</h1>
+
+<form action="{{ speciesdef.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update Species</button>
+</form>
+<a href="{{ detail }}">Cancel</a></br>
+{% endblock %}

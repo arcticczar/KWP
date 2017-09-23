@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete Site</h1>
+
+<form action="{{ Site.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	
+	{{ post.locations }}</br>
+	{{ post.short }}</br>
+	
+	<a href=" {{ post.get_absolute_url }}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Site</button>
+</form>
+
+
+{% endblock %}

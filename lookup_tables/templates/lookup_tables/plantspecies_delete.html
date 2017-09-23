@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete SpeciesDef</h1>
+
+<form action="{{ SpeciesDef.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	{{ post.common_name }} </br>
+	{{ post.scientific_name }}</br>
+	{{ post.species_code }}</br>
+	<a href=" {{ SpeciesDef.get_absolute_url }}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Species</button>
+</form>
+
+
+{% endblock %}

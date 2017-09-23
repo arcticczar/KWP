@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Update Plant Species</h1>
+
+<form action="{{ plantspecies.get_update_url }}" method = "post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Update Species</button> </br> <a href="{{ post.get_absolute_url }}">Cancel</a>
+</form>
+
+{% endblock %}

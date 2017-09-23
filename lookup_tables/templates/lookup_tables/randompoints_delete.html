@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete Point</h1>
+
+<form action="{{ RandomPoints.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	{{ post.point_id }} </br>
+	{{ post.phase}} </br>
+	{{ post.near.name }} </br>
+
+	<a href="{{ post.get_absolute_url }}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Point</button>
+</form>
+
+
+{% endblock %}

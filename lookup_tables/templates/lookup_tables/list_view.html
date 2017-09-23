@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<H1>{{ modelname }}</H1>
+
+{% for item in urllist %}
+	<p> {{ item.0 }} <a href="{{ item.1 }}">view</a> </p>
+{% endfor %}
+<a href="{{ modelname|lower }}/create/">Create</a>
+</br>
+
+{% endblock %}

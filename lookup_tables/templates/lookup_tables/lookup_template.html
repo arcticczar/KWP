@@ -1,0 +1,22 @@
+<!-- {% load app_filters %} -->
+{% extends 'base.html' %}
+{% block content %}
+
+<h2></h2>
+	<section>
+	{% if model %}
+		<h3>{{ source}}</h3>
+		<ul>
+
+		</ul>
+	</section>
+		<section>
+			{%  for obj in model %}
+			<li>{{ obj}}
+			{% endfor %}
+		</section>
+	{% else %}
+	 <p> No Data </p>
+	 {% endif %}
+
+{% endblock %}

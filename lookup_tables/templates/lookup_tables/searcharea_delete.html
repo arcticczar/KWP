@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head>
+<h1> Delete Search Area</h1>
+
+<form action="{{ SearchArea.get_delete_url }}" method = "post">
+	{% csrf_token %}
+	{{ post.site }} </br>
+	{{ post.turbine }}</br>
+	{{ post.loc }}</br>
+	<a href=" {{ post.get_absolute_url }}">Cancel</a>
+	</br></br>
+	<button type="submit" color="red">Delete Search Area</button>
+</form>
+
+
+{% endblock %}

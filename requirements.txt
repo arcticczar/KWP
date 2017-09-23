@@ -1,0 +1,4 @@
+Django==1.10.5
+GDAL==2.1.0
+numpy==1.12.1
+psycopg2==2.7.1

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head><h1> Create Search Area </h1>
+<div>
+    <div>
+        <form
+            action = "{% url 'searcharea_create' %}"
+            method = "post">
+            {% csrf_token %}
+
+            {{ form.as_p }} 
+            
+            <button type="submit">
+            submit</button>
+
+            <br><a href="{{ listview }}">Cancel</a></br>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

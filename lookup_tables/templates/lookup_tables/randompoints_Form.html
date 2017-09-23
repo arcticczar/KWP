@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {{form.media}}
+</head><h1> Create Random Points </h1>
+<div>
+    <div>
+        <form
+            action = "{% url 'randompoints_create' %}"
+            method = "post">
+            {% csrf_token %}
+
+            {{ form.as_p }} 
+            
+            <button type="submit">
+            submit</button>
+
+            <br><a href="{{ listview }}">Cancel</a></br>
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}
